@@ -17,7 +17,7 @@ let letters = [
 
 _listen = function(event)
 {
-	// First find 
+	// First find gre
 	for(let i = 0; i < (event.detail.data.length); i += 4){
         let greyScalePixel = [];
         greyScalePixel[i/4] = (event.detail.data[i] + event.detail.data[i+1] + event.detail.data[i+2])/3;
