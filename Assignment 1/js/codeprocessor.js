@@ -17,7 +17,29 @@ let letters = [
 
 _listen = function(event)
 {
-	// your code here
+	for(let i = 0; i < (event.detail.data.length); i += 4){
+        let greyScalePixel = [];
+        greyScalePixel[i/4] = (event.detail.data[i] + event.detail.data[i+1] + event.detail.data[i+2])/3;
+    } 
+    
+    let sumGreyScalePixel = 0;
+    
+    for(let j = 0; j < greyScalePixel.length; j++){
+        sumGreyScalePixel += greyScalePixel[j];
+    }
+    
+    averageGreyScale = sumGreyScalePixel/greyScalePixel.length;
+    
+    if (averageGreyScale > 127){
+        bright = true;
+    }
+    
+    if (bright){
+        brightCount++;
+    }
+    else {
+        darkCount++;
+    }
 };
 
 /**
